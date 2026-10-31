@@ -90,7 +90,6 @@ const search=document.getElementById('search'),posts=[...document.querySelectorA
 function filter(term){let shown=0;posts.forEach(p=>{let ok=(p.innerText+' '+(p.dataset.search||'')).toLowerCase().includes(term.toLowerCase());p.style.display=ok?'':'none';if(ok)shown++});empty.style.display=shown?'none':'block'}
 search.addEventListener('input',e=>filter(e.target.value));
 document.querySelectorAll('[data-term]').forEach(b=>b.addEventListener('click',()=>{search.value=b.dataset.term;filter(b.dataset.term);document.getElementById('posts').scrollIntoView({behavior:'smooth'})}));
-const qs=[
 {q:'ভারতের রাজধানী কোনটি?',o:['মুম্বাই','নয়াদিল্লি','কলকাতা','চেন্নাই'],a:1,e:'ভারতের রাজধানী নয়াদিল্লি।'},
 {q:'উদ্ভিদ কোন প্রক্রিয়ায় খাদ্য তৈরি করে?',o:['শ্বসন','সালোকসংশ্লেষ','পরিপাক','বাষ্পীভবন'],a:1,e:'উদ্ভিদ সালোকসংশ্লেষের মাধ্যমে খাদ্য তৈরি করে।'},
 {q:'এক সপ্তাহে কয় দিন?',o:['পাঁচ','ছয়','সাত','আট'],a:2,e:'এক সপ্তাহে সাত দিন।'},
